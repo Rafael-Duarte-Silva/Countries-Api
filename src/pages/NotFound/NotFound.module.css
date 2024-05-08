@@ -8,14 +8,14 @@
 }
 
 .notFound__title{
-    font-size: 7rem;
+    font-size: calc(4.296rem + 3.005vw);
     font-weight: 800;
 
     color: var(--primary-text-color);
 }
 
 .notFound__subtitle{
-    font-size: 2rem;
+    font-size: calc(1.324rem + 0.751vw);
     font-weight: 600;
 
     color: var(--primary-text-color);
@@ -24,7 +24,7 @@
 }
 
 .notFound__text{
-    font-size: 1.5rem;
+    font-size: calc(0.993rem + 0.563vw);
     font-weight: 300;
 
     color: var(--primary-text-color);
@@ -41,7 +41,7 @@
     align-items: center;
     justify-content: space-around;
 
-    font-size: 1rem;
+    font-size: calc(0.831rem + 0.188vw);
     font-weight: 600;
 
     color: var(--primary-text-color);

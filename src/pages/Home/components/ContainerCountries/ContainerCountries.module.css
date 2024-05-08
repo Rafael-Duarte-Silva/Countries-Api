@@ -5,7 +5,7 @@
 
     justify-content: center;
 
-    margin-block: 4%;
+    margin-block: calc(1.848rem + 1.502vw);
 }
 
 .country{
@@ -69,7 +69,5 @@
 @media screen and (max-width: 23.4375rem) {
     .containerCountries{
         grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
-
-        margin-block: 10%;
     }
 }

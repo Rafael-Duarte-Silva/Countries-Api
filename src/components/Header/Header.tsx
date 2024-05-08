@@ -25,7 +25,7 @@ export const Header = ({onChange, isDark}: HeaderProps) => {
                     onChange={onChange}
                     checked={isDark}
                 />
-                <h2 className={styles.darkMode__title}>Dark Mode</h2>
+                <span className={styles.darkMode__title}>Dark Mode</span>
             </label>
         </header>
     );

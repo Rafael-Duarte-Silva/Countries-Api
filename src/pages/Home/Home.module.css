@@ -3,15 +3,13 @@
     flex-direction: row;
     justify-content: space-between;
 
-    margin-top: 3.125rem;
+    margin-top: calc(2.027rem + 1.22vw);
 }
 
 @media screen and (max-width: 38.75rem){
     .containerFilter{
         flex-direction: column;
 
-        row-gap: 2.5rem;
-
-        margin-block: 1.5625rem 0.625rem;
+        row-gap: calc(1.709rem + 2.041vw);
     }
 }

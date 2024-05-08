@@ -24,13 +24,12 @@ export const CustomSelect = ({ onChange, selectedValue, onClick, active }: Custo
                 className={styles.customSelect}
                 onClick={onClick}
                 type="button"
-                role="combobox"
-                aria-labelledby="select button"
+                role="open dropDown"
+                aria-label="custom select"
                 aria-haspopup="listbox"
                 aria-expanded={active}
-                aria-controls="select-dropdown"
             >
-                <p className={styles.customSelect__text}>{selectedValue}</p>
+                <span className={styles.customSelect__text}>{selectedValue}</span>
 
                 <IconCustomSelect
                     className={active ? `${styles.customSelect__icon} ${styles.Active}` : styles.customSelect__icon}
@@ -46,7 +45,7 @@ export const CustomSelect = ({ onChange, selectedValue, onClick, active }: Custo
                         <li role="option" key={index}>
                             <label tabIndex={0} onKeyDown={accessibilityKeyDown}>
                                 <input type='radio' name="region" value={option} onChange={onChange} />
-                                <p>{option}</p>
+                                <span>{option}</span>
                             </label>
                         </li>
                     ))}
