@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { App } from './App.tsx';
 import './index.css';
 
-import { createBrowserRouter, RouterProvider} from 'react-router-dom';
+import { createBrowserRouter, Navigate, RouterProvider} from 'react-router-dom';
+
+import { App } from './App.tsx';
 import { Home } from './pages/Home/Home.tsx';
 import { Country } from './pages/Country/Country.tsx';
 import { NotFound } from './pages/NotFound/NotFound.tsx';
@@ -14,8 +15,15 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <NotFound/>,
     children: [
+      {
+        path: '*',
+        element: <Navigate to={"/404"}/>
+      },
+      {
+        path: '/404',
+        element: <NotFound/>,
+      },
       {
         path: "/?",
         element: <Home/>
