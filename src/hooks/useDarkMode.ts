@@ -20,7 +20,11 @@ export const useDarkMode = () => {
     );
 
     preference.onchange = () => {
-        if(preference.matches){
+        setIsDark(preference.matches);
+    }
+
+    const changeDarkMode = () => {
+        if(isDark){
             $html?.classList.add('dark');
 
             localStorage.setItem('isDark', 'true');
@@ -29,18 +33,6 @@ export const useDarkMode = () => {
         else{
             $html?.classList.remove('dark');
 
-            localStorage.setItem('isDark', '');
-        }
-    }
-
-    const changeDarkMode = () => {
-        $html?.classList.toggle('dark');
-
-        if(isDark){
-            localStorage.setItem('isDark', 'true');
-        }
-
-        else{
             localStorage.setItem('isDark', '');
         }
     };
