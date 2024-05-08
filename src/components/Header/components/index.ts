@@ -1,0 +1,1 @@
+export { IconDarkmode } from './IconDarkmode';

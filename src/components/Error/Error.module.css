@@ -1,0 +1,13 @@
+.error{
+    height: 45vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.error__text{
+    font-size: calc(1.377rem + 1.803vw);
+
+    color: var(--primary-text-color);
+}

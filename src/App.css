@@ -1,0 +1,32 @@
+:root {
+    --element-color: hsl(0, 0%, 100%);
+    --primary-text-color: hsl(200, 15%, 8%);
+    --secondary-text-color: hsl(0, 0%, 52%);
+    --tertiary-text-color: hsl(0, 0%, 52%);
+    --background-color: hsl(0, 0%, 98%);
+    --stroke-color: hsl(200, 15%, 8%);
+    --skeleton-linear-gradient: linear-gradient(90deg, var(--element-color) 0%, rgb(219, 219, 219) 50%, var(--element-color) 100%);
+}
+
+.dark:root{
+    --element-color: hsl(209, 23%, 22%);
+    --primary-text-color: hsl(0, 0%, 100%);
+    --secondary-text-color: hsl(0, 0%, 100%);
+    --background-color: hsl(207, 26%, 17%);
+    --stroke-color: transparent;
+    --skeleton-linear-gradient: linear-gradient(90deg, var(--element-color) 0%, rgba(80,94,102,1) 50%, var(--element-color) 100%);
+}
+
+html{
+    color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+    html{
+        color-scheme: dark;
+    }
+}
+
+main{
+    padding-inline: 5%;
+}

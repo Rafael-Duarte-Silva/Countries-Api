@@ -1,0 +1,17 @@
+.containerFilter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin-top: 3.125rem;
+}
+
+@media screen and (max-width: 38.75rem){
+    .containerFilter{
+        flex-direction: column;
+
+        row-gap: 2.5rem;
+
+        margin-block: 1.5625rem 0.625rem;
+    }
+}

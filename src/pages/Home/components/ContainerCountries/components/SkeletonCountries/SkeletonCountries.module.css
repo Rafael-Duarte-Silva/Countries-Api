@@ -1,0 +1,27 @@
+.skeletonCountry{
+    height: 19.8606rem;
+
+    background: var(--skeleton-linear-gradient);
+    background-size: 400% 400%;
+
+    border-radius: 0.375rem;
+
+    -webkit-box-shadow: 0.125rem 0.125rem 0.25rem 0rem rgba(0,0,0,0.1);
+    -moz-box-shadow: 0.125rem 0.125rem 0.25rem 0rem rgba(0,0,0,0.1);
+    box-shadow: 0.125rem 0.125rem 0.25rem 0rem rgba(0,0,0,0.1);
+    
+    cursor: progress;
+
+    animation: loading 1.6s ease-in-out infinite;
+}
+
+@keyframes loading{
+    from{background-position: 0% 0%;}
+    to{background-position: 135% 0%;}
+}
+
+@media (update: low), (prefers-reduced-motion: reduce){
+    .skeletonCountry{
+        animation: loading 2.8s ease-in-out infinite;
+    } 
+}

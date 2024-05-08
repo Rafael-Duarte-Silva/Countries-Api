@@ -1,0 +1,1 @@
+export { IconCustomSelect } from './IconCustomSelect';
