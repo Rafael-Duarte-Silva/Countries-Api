@@ -3,7 +3,7 @@
     flex-direction: row;
     gap: 1.875rem 6.5vw;
 
-    padding-block: 5%;
+    margin-block: calc(2.31rem + 1.878vw);
 }
 
 .containerSkeleton__image{
