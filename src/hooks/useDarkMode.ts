@@ -4,44 +4,63 @@ export const useDarkMode = () => {
     const $html = document.querySelector('html');
     const preference = window.matchMedia("(prefers-color-scheme: dark)");
 
-    const [isDark, setIsDark] = useState<boolean>(() => {
-            if(preference.matches){
-                localStorage.setItem('isDark', 'true');
-            }
+    const [theme, setTheme] = useState<'dark' | 'light'>(() => {
+        const theme = localStorage.getItem('theme');
 
-            const isDark = Boolean(localStorage.getItem('isDark'));
+        if (theme === 'dark') {
+            $html?.classList.remove('light');
+            $html?.classList.add('dark');
 
-            if(isDark){
-                $html?.classList.add('dark');
-            }
-
-            return isDark;
+            return theme;
         }
+
+        else if (preference.matches && !theme) {
+            localStorage.setItem('theme', 'dark');
+
+            return 'dark';
+        }
+
+        return 'light';
+    }
     );
 
     preference.onchange = () => {
-        setIsDark(preference.matches);
-    }
-
-    const changeDarkMode = () => {
-        if(isDark){
-            $html?.classList.add('dark');
-
-            localStorage.setItem('isDark', 'true');
+        if(preference.matches){
+            setTheme('dark');
         }
 
         else{
-            $html?.classList.remove('dark');
+            setTheme('light');
+        }
+    }
 
-            localStorage.setItem('isDark', '');
+    const changeDarkMode = () => {
+        if (theme === 'dark') {
+            $html?.classList.remove('light');
+            $html?.classList.add('dark');
+
+            localStorage.setItem('theme', 'dark');
+        }
+
+        else {
+            $html?.classList.remove('dark');
+            $html?.classList.add('light');
+
+            localStorage.setItem('theme', 'light');
         }
     };
 
-    useEffect(changeDarkMode, [isDark]);
+    useEffect(changeDarkMode, [theme]);
 
     const handleChangeDarkMode = () => {
-        setIsDark(!isDark);
+        if(theme === 'dark'){
+            setTheme('light');
+        }
+
+        else{
+            setTheme('dark');
+        }
     };
 
-    return { handleChangeDarkMode, isDark };
+    return { handleChangeDarkMode, theme };
 }

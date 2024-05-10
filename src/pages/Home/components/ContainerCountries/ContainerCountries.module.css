@@ -60,6 +60,10 @@
     margin-block-end: 3.5%;
 }
 
+.infiniteScrollTarget{
+    visibility: hidden;
+}
+
 @media screen and (max-width: 40.625rem) {
     .containerCountries{
         padding-inline: 12%;

@@ -2,6 +2,8 @@ import styles from './ContainerCountries.module.css';
 
 import { Countries } from '../../types/Countries';
 
+import { useInfiniteScroll } from './hooks';
+
 import { Link } from 'react-router-dom';
 import { Error } from '../../../../components/Error';
 import { SkeletonCountries } from './components/SkeletonCountries';
@@ -15,6 +17,8 @@ type ContainerCountriesProps = {
 }
 
 export const ContainerCountries = ({ data, isLoading, isError }: ContainerCountriesProps) => {
+    const { countrylength } = useInfiniteScroll();
+
     return (
         <>
             {isError && <Error />}
@@ -23,7 +27,7 @@ export const ContainerCountries = ({ data, isLoading, isError }: ContainerCountr
                 <div className={styles.containerCountries}>
                     {isLoading && <SkeletonCountries amount={12} />}
 
-                    {data?.data.map((country, index) => (
+                    {data?.data.slice(0, countrylength).map((country, index) => (
                         <article className={styles.country} key={index}>
                             <Link
                                 className={styles.country__link}
@@ -56,6 +60,7 @@ export const ContainerCountries = ({ data, isLoading, isError }: ContainerCountr
                         </article>
                     ))
                     }
+                    <div className={styles.infiniteScrollTarget}></div>
                 </div>
             )}
         </>
