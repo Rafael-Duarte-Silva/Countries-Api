@@ -23,6 +23,13 @@ export const useDarkMode = () => {
         return 'light';
     }
     );
+    const [isDark, setIsdark] = useState<boolean>(() => {
+        if(theme === 'dark'){
+            return true;
+        }
+
+        return false;
+    });
 
     preference.onchange = () => {
         if(preference.matches){
@@ -35,6 +42,8 @@ export const useDarkMode = () => {
     }
 
     const changeDarkMode = () => {
+        setIsdark(!isDark);
+
         if (theme === 'dark') {
             $html?.classList.remove('light');
             $html?.classList.add('dark');
@@ -62,5 +71,5 @@ export const useDarkMode = () => {
         }
     };
 
-    return { handleChangeDarkMode, theme };
+    return { handleChangeDarkMode, isDark };
 }
