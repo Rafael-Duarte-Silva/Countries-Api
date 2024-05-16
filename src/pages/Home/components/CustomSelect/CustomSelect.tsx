@@ -6,7 +6,7 @@ import { useAccessibilityKeyBoard } from '../../../../hooks/useAccessibilityKeyB
 
 import { IconCustomSelect } from './components/IconCustomSelect';
 
-import { customSelectOptions } from '../../utils';
+import { customSelectOptions } from '../../consts';
 
 type CustomSelectProps = {
     onChange: (event: ChangeEvent<HTMLInputElement>) => void,

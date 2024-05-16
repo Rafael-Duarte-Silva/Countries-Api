@@ -4,7 +4,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 import { Countries } from "../types/Countries";
 
-import { customSelectOptions } from "../utils";
+import { customSelectOptions } from "../consts";
 
 import { countriesByNameService,
         countriesByRegionService,
