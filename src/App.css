@@ -1,4 +1,4 @@
-:root, light:root{
+:root, .light:root{
     --element-color: hsl(0, 0%, 100%);
     --primary-text-color: hsl(200, 15%, 8%);
     --secondary-text-color: hsl(0, 0%, 52%);
